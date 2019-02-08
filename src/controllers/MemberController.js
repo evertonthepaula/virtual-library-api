@@ -26,7 +26,7 @@ module.exports = {
         return res.json(member);
     },
 
-    async update(req, res){
+    async destroy(req, res){
         await Member.findByIdAndRemove(req.params.id);
 
         return res.send();

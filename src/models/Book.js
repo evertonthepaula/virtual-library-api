@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const MemberSchema = new mongoose.Schema({
+const BookSchema = new mongoose.Schema({
     name:{
         type:  String,
         required: true,
@@ -17,4 +17,4 @@ const MemberSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Member',  MemberSchema);
+mongoose.model('Book',  BookSchema);
