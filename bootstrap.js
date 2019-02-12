@@ -4,8 +4,8 @@ const express = require('express');
 const morgan = require('morgan');
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true });
 requireDir('./src/models/');
+mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true });
 
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());   

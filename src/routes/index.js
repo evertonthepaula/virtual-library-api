@@ -16,4 +16,11 @@ routes.post('/upload', multer(multerConfigs).single('file'), (req, res) => {
     return res.json();
 });
 
+
+routes.get('/', (req,res) =>{
+    console.log('hello Wolrd!');
+
+    return res.json({hello: 'Wolrd!'});
+});
+
 module.exports = routes;
