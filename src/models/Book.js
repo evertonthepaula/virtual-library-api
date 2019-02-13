@@ -6,10 +6,17 @@ const BookSchema = new mongoose.Schema({
         required: true,
 
     },
+    path:{
+        type:  String,
+        required: true,
+    },
+    path:{
+        type:  String,
+        required: false,
+    },
     status:{
         type: Boolean,
         required: true,
-
     },
     createdAtt: {
         type: Date,
