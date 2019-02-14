@@ -11,5 +11,4 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());   
 app.use(morgan('dev'));
 app.use('/api/', require('./routes'));
-console.log('API iniciada em http://localhost:3001/api');
-app.listen(3001);
+app.listen(3001, () => console.log('API iniciada em http://localhost:3001/api'));

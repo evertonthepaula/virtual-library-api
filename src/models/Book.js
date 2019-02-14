@@ -4,19 +4,21 @@ const BookSchema = new mongoose.Schema({
     name:{
         type:  String,
         required: true,
-
     },
-    path:{
+    size:{
         type:  String,
         required: true,
     },
     path:{
         type:  String,
-        required: false,
+        required: true,
+    },
+    url:{
+        type:  String,
     },
     status:{
         type: Boolean,
-        required: true,
+        default: true,
     },
     createdAtt: {
         type: Date,
