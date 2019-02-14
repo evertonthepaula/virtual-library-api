@@ -15,7 +15,16 @@ module.exports = {
     },
 
     async store(req, res){
-        const book = await Book.create(req.body);
+        const {originalname: name, size, path: filename} = res.file
+
+        const book = {
+            name,
+            size,
+            path,
+            url:'',
+        }
+
+        const book = await Book.create(book);
 
         return res.json(book);
     },

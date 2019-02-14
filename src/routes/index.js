@@ -2,20 +2,16 @@ const routes =  require('express').Router();
 const multer = require('multer');
 const multerConfigs = require('./config/multer');
 
-const MembersController = require('../controllers/MemberController');
+const MemberController = require('../controllers/MemberController');
+const BookController = require('../controllers/BookController');
 
-routes.get('/members', MembersController.index);
-routes.get('/members:id', MembersController.show);
-routes.post('/members', MembersController.store);
-routes.put('/members:id', MembersController.update);
-routes.delete('/members:id', MembersController.destroy);
+routes.get('/members', MemberController.index);
+routes.get('/members:id', MemberController.show);
+routes.post('/members', MemberController.store);
+routes.put('/members:id', MemberController.update);
+routes.delete('/members:id', MemberController.destroy);
 
-routes.post('/upload', multer(multerConfigs).single('file'), (req, res) => {
-    console.log(req.file);
-    
-    return res.json();
-});
-
+routes.post('/books', multer(multerConfigs).single('file'), BookController.store);
 
 routes.get('/', (req,res) =>{
     console.log('hello Wolrd!');
