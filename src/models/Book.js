@@ -20,6 +20,9 @@ const BookSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
     },
+    tags:{
+        type: Array,
+    },
     createdAtt: {
         type: Date,
         default: Date.now,
