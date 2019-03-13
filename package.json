@@ -5,11 +5,14 @@
   "main": "./src/bootstrap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./src/bootstrap.js"
+    "server": "DEBUG=express:* nodemon ./src/bootstrap.js",
+    "async-test": "node --trace-sync-io ./src/bootstrap.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.3",
+    "debug": "^4.1.1",
     "express": "^4.16.4",
     "mongoose": "^5.4.9",
     "multer": "^1.4.1",
