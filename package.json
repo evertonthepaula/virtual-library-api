@@ -1,21 +1,23 @@
 {
-  "name": "basic-api",
+  "name": "library-api",
   "version": "1.0.0",
   "description": "",
   "main": "./src/bootstrap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./src/bootstrap.js",
+    "server": "pm2 ./src/bootstrap.js",
+    "server-dev": "nodemon ./src/bootstrap.js",
     "server-debug": "DEBUG=express:* nodemon ./src/bootstrap.js",
     "async-test": "node --trace-sync-io ./src/bootstrap.js"
   },
-  "author": "",
+  "author": "Everton de Paula <evertothepaula@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "compression": "^1.7.4",
     "debug": "^4.1.1",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "helmet": "^3.16.0",
     "mongoose": "^5.4.19",
     "multer": "^1.4.1",
     "require-dir": "^1.2.0",
@@ -24,5 +26,13 @@
   "devDependencies": {
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evertonthepaula/virtual-library-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evertonthepaula/virtual-library-api/issues"
+  },
+  "homepage": "https://github.com/evertonthepaula/virtual-library-api#readme"
 }
