@@ -1,4 +1,4 @@
-const routes =  require('express').Router();
+const routes = require('express').Router();
 const multer = require('multer');
 
 const multerConfigs = require('./config/multer');
