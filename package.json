@@ -5,9 +5,8 @@
   "main": "./src/bootstrap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "pm2 ./src/bootstrap.js",
+    "server": "pm2 start ecosystem.config.js",
     "server-dev": "nodemon ./src/bootstrap.js",
-    "server-debug": "DEBUG=express:* nodemon ./src/bootstrap.js",
     "async-test": "node --trace-sync-io ./src/bootstrap.js"
   },
   "author": "Everton de Paula <evertothepaula@gmail.com>",
