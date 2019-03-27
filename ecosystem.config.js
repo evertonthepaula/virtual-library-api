@@ -7,7 +7,7 @@ module.exports = {
         log:    './logs/pm2/combined.outerr.log',
       env: {
             NODE_ENV: 'production',
-            APP_NAME: 'API',
+            APP_NAME: 'virtual-library-api',
             APP_PORT: 3002,
             DB_DBMS: 'mongodb',
             DB_HOST: 'localhost',

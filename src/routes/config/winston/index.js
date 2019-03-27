@@ -1,7 +1,12 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-    format: winston.format.colorize(),
+    format: winston.format.combine(
+        winston.format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss'
+        }),
+        winston.format.printf(info => `[${info.timestamp}] - ${info.level}: ${info.message} | "service: ${info.service}" ${(info.splat!==undefined)?info.splat :''}`)
+    ),
     defaultMeta: { service: 'user-service' },
     transports: [
         new winston.transports.File({
@@ -29,7 +34,10 @@ const logger = winston.createLogger({
 // 
 if (process.env.NODE_ENV !== 'production') {
     logger.add(new winston.transports.Console({
-        format: winston.format.simple()
+        format:winston.format.combine(
+            winston.format.colorize(),
+            winston.format.simple()
+          )
     }));
 }
 
