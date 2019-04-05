@@ -12,7 +12,6 @@ const logger = require("./routes/config/winston");
 requireDir('./models/');
 mongoose.connect(`${process.env.DB_DBMS}://${process.env.DB_HOST}:${process.env.DB_PORT}/nodeapi`, { useNewUrlParser: true });
 
-
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(compression());
